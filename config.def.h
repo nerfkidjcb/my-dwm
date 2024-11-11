@@ -64,6 +64,7 @@ static const char *volumeStatus[]   = { "pkill", "-RTMIN+1", "dwmblocks", NULL }
 /* program commands */
 static const char *openTerminal[]  = { "alacritty", NULL };
 static const char *openBrowser[] = { "firefox", NULL };
+static const char *openBrowserPrivate[] = { "firefox", "--private-window", NULL };
 
 /* utility commands */
 static const char *logoutMachine[] = { "pkill -KILL -u $USER", NULL };
@@ -82,6 +83,7 @@ static const Key keys[] = {
 	/* programs */
 	{ MODKEY,			XK_Return,			spawn,          {.v = openTerminal } },
 	{ MODKEY,			XK_space,			spawn,          {.v = openBrowser } },
+	{ MODKEY|ShiftMask,		XK_space,			spawn,          {.v = openBrowserPrivate } },
 	
 	/* layout */
 	{ MODKEY,         XK_j,      			focusstack,     {.i = +1 } },
